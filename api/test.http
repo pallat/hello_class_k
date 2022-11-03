@@ -1,0 +1,16 @@
+GET  http://localhost:8888/ping
+
+###
+
+GET http://localhost:8888/foobar/3
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Njc0Njk2OTJ9.Y9YK-zpzvpHzMd6fK51qUBrEtgpqTOtbAYoGkLhoM2I
+
+###
+
+POST http://localhost:8888/login
+Content-Type: application/json
+
+{
+    "email": "1@email.com",
+    "password":"1"
+}

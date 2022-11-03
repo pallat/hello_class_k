@@ -1,6 +1,8 @@
 package foobar
 
-import "testing"
+import (
+	"testing"
+)
 
 /*
 !	given 1 wants "1"
@@ -49,5 +51,26 @@ func TestFooBarGiven4(t *testing.T) {
 
 	if want != result {
 		t.Errorf("given %d wants %q but %q", given, want, result)
+	}
+}
+
+type fakeRandom int
+
+func (r fakeRandom) Intn(int) int {
+	return int(r)
+}
+
+func TestRandomFooBar(t *testing.T) {
+	// arrange
+	// s1 := rand.NewSource(time.Now().UnixNano())
+	// r1 := rand.New(s1)
+
+	// act
+	var d fakeRandom = 2
+	r := RandomFooBar(d)
+
+	// assert
+	if r != "Foo" {
+		t.Errorf("")
 	}
 }
